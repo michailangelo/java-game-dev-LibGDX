@@ -7,7 +7,7 @@ public abstract class BaseScreen implements Screen
 {
     protected Stage mainStage;
     protected Stage uiStage;
-    
+
     public BaseScreen()
     {
         mainStage = new Stage();
@@ -29,14 +29,14 @@ public abstract class BaseScreen implements Screen
         // act methods
         uiStage.act(dt);
         mainStage.act(dt);
-        
+
         // defined by user
         update(dt);
-        
+
         // clear the screen
         Gdx.gl.glClearColor(0,0,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        
+
         // draw the graphics
         mainStage.draw();
         uiStage.draw();
@@ -52,6 +52,6 @@ public abstract class BaseScreen implements Screen
     public void dispose() {  }
 
     public void show()    {  }
-   
+
     public void hide()    {  }
 }
