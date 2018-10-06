@@ -13,17 +13,22 @@ public class Turtle extends BaseActor
                 "assets/turtle-4.png", "assets/turtle-5.png", "assets/turtle-6.png"};
 
         loadAnimationFromFiles(filenames, 0.1f, true);
-        
+
         setAcceleration(400);
         setMaxSpeed(100);
         setDeceleration(400);
-        
+
         setBoundaryPolygon(8);
     }
 
     public void act(float dt)
     {
         super.act( dt );
+
+        if(!this.isVisible())
+        {
+            return;
+        }
 
         if (Gdx.input.isKeyPressed(Keys.LEFT)) 
             accelerateAtAngle(180);

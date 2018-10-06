@@ -48,7 +48,7 @@ public class BaseActor extends Actor
 
     // stores size of game world for all actors
     private static Rectangle worldBounds;
-    
+
     public BaseActor(float x, float y, Stage s)
     {
         // call constructor from Actor class
@@ -503,7 +503,7 @@ public class BaseActor extends Actor
         if (getY() + getHeight() > worldBounds.height)
             setY(worldBounds.height - getHeight());
     }
-    
+
     /**
      *  Center camera on this object, while keeping camera's range of view 
      *  (determined by screen size) completely within world bounds.
@@ -521,7 +521,7 @@ public class BaseActor extends Actor
         cam.position.y = MathUtils.clamp(cam.position.y, cam.viewportHeight/2, worldBounds.height - cam.viewportHeight/2);
         cam.update();
     }
-    
+
     // ----------------------------------------------
     // Instance list methods
     // ----------------------------------------------
@@ -538,13 +538,13 @@ public class BaseActor extends Actor
     public static ArrayList<BaseActor> getList(Stage stage, String className)
     {
         ArrayList<BaseActor> list = new ArrayList<BaseActor>();
-        
+
         Class theClass = null;
         try
         {  theClass = Class.forName(className);  }
         catch (Exception error)
         {  error.printStackTrace();  }
-        
+
         for (Actor a : stage.getActors())
         {
             if ( theClass.isInstance( a ) )
@@ -563,7 +563,7 @@ public class BaseActor extends Actor
     {
         return getList(stage, className).size();
     }
-    
+
     // ----------------------------------------------
     // Actor methods: act and draw
     // ----------------------------------------------

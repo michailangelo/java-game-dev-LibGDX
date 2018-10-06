@@ -18,7 +18,7 @@ public abstract class BaseGame extends Game
     {        
         game = this;
     }
-    
+
     /**
      *  Used to switch screens while game is running.
      *  Method is static to simplify usage.
